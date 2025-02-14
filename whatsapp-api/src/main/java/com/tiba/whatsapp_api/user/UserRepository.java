@@ -16,6 +16,6 @@ public interface UserRepository extends JpaRepository<User, String> {
     List<User> findAllUsersExceptSelf(@Param("publicId") String publicId);
 
     @Query("SELECT u FROM User u WHERE u.id = :publicId")
-    Optional<User> findUserByPublicId(@Param("publicId") String publicId);
+    Optional<User> findByPublicId(@Param("publicId") String publicId);
 
 }
